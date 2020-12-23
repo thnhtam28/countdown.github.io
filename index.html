@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - DailyUI #014 | Countdown Timer</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body style="        background-image: url('img/wallpaper.jpg');
+      background-size: cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+">
+    <!-- partial:index.partial.html -->
+    <div class="container">
+
+        <h1>Đếm ngược đến Tết</h1>
+        <div id="clock" style="font-family: 'Jura', sans-serif;
+        text-align: center;
+        margin-top: 1.4em;
+        font-size: 6em;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: #E88B37;
+    "></div>
+
+    </div>
+    <footer>
+        
+    </footer>
+    <!-- partial -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js" integrity="sha512-lteuRD+aUENrZPTXWFRPTBcDDxIGWe5uu0apPEn+3ZKYDwDaEErIK9rvR0QzUGmUQ55KFE2RqGTVoZsKctGMVw==" crossorigin="anonymous"></script>
+    <script>
+        $('#clock').countdown('2021/02/12', function (event) {
+            var $this = $(this).html(event.strftime(''
+                + '<span>%D</span>:'
+                + '<span>%H</span>:'
+                + '<span>%M</span>:'
+                + '<span>%S</span>'));
+        });
+    </script>
+</body>
+</html>
