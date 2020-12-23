@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic);
 /* SKIN SELECT */
 #skin-select h3, #skin-select h4 { font-family: 'Lato', sans-serif; } 
 #skin-select { position:fixed; top:60px; width:290px; z-index:9000; background:#fff; 
