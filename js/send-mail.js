@@ -1,50 +1,18 @@
-(function ($) {
-	
-	$(function() {
-		
-		var contactForm = $( '#contact-form' );
-		var loader = contactForm.find('.ajax-loader');
-		
-		contactForm.submit(function()
-		{
-			if (contactForm.valid())
-			{
-				loader.css('display', 'block');
-				var formValues = $(this).serialize();
-				
-				$.post($(this).attr('action'), formValues, function(data)
-				{
-					if ( data == 'success' )
-					{
-						contactForm.clearForm();
-					}
-					else
-					{
-						$('.alert').addClass('error');
-					}
-					loader.hide();
-					$('.alert').fadeIn().delay(2000).fadeOut();
-				});
-			}
-			
-			return false
-		});
-	
-	});
-	
-	
-	$.fn.clearForm = function() {
-	  return this.each(function() {
-	    var type = this.type, tag = this.tagName.toLowerCase();
-	    if (tag == 'form')
-	      return $(':input',this).clearForm();
-	    if (type == 'text' || type == 'password' || tag == 'textarea')
-	      this.value = '';
-	    else if (type == 'checkbox' || type == 'radio')
-	      this.checked = false;
-	    else if (tag == 'select')
-	      this.selectedIndex = -1;
-	  });
-	};
-
-})(jQuery);
+$(document).ready(function () {
+    $("#contact-form").on('submit', function (event) {
+        event.preventDefault();
+        var formData = $(this).serialize();
+        $.ajax({
+            type: 'POST',
+            url: 'sendmail.php',
+            dataType: "json",
+            data: formData,
+            success: function (response) {
+                alert(response.success);
+            },
+            error: function (xhr, status, error) {
+                console.log(xhr);
+            }
+        });
+    });
+});
