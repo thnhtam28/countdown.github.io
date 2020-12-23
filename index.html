@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>CodePen - DailyUI #014 | Countdown Timer</title>
     <link rel="stylesheet" href="./style.css">
-
+    <link type="text/css" rel="stylesheet" media="screen" href="vendor/sakura/jquery-sakura.min.css" />
 </head>
 <body style="        background-image: url('img/wallpaper.jpg');
       background-size: cover;
@@ -27,11 +27,11 @@
 
     </div>
     <footer>
-        
     </footer>
     <!-- partial -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js" integrity="sha512-lteuRD+aUENrZPTXWFRPTBcDDxIGWe5uu0apPEn+3ZKYDwDaEErIK9rvR0QzUGmUQ55KFE2RqGTVoZsKctGMVw==" crossorigin="anonymous"></script>
+    <script src="vendor/sakura/jquery-sakura.min.js"></script>
     <script>
         $('#clock').countdown('2021/02/12', function (event) {
             var $this = $(this).html(event.strftime(''
@@ -39,6 +39,22 @@
                 + '<span>%H</span>:'
                 + '<span>%M</span>:'
                 + '<span>%S</span>'));
+        });
+
+        $(window).on('load', function () {
+            $('body').sakura('start', {
+                blowAnimations: [
+                    'blow-soft-left'
+            ],                   // Horizontal movement animation names
+                className: 'sakura', // Class name to use
+                fallSpeed: 1,        // Factor for petal fall speed
+                maxSize: 24,         // Maximum petal size
+                minSize: 14,          // Minimum petal size
+                newOn: 200,          // Interval after which a new petal is added
+                swayAnimations: [    // Swaying animation names
+                    'sway-8'
+            ]
+            });
         });
     </script>
 </body>
