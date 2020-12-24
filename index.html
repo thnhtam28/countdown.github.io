@@ -837,11 +837,13 @@
     <script src="skin-select/skin-select.js"></script>
     <script>
         $.ajax({
-            url: "json/info.json",
+            url: "https://thnhtam28.github.io/json/info.json",
             type: "GET",
             dataType: "json",
             success: function (data) {
                 console.log(data);
+                console.log(data.sProcessing);
+                console.log(data.oPaginate.sFirst);
             }
         });
 
