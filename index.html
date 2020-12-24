@@ -697,26 +697,11 @@
                                         <li><a href="https://www.facebook.com/levothanhtam/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="https://twitter.com/MrChum593" target="_blank"><i class="fab fa-twitter"></i></a></li>
                                         <li><a href="https://www.linkedin.com/in/thanhtam28/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <!--<li><a class="google" href="#"></a></li>-->
-                                        <!--<li><a class="pinterest" href="#"></a></li>-->
                                         <li><a href="https://github.com/thnhtam28" target="_blank"><i class="fab fa-github"></i></a></li>
-                                        <!--<li><a class="behance" href="#"></a></li>
-                                        <li><a class="dribble" href="#"></a></li>-->
                                         <li><a href="https://www.instagram.com/vktr.27" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                                        <!--<li><a class="lastfm" href="#"></a></li>
-                                        <li><a class="rss" href="#"></a></li>
-                                        <li><a class="vimeo" href="#"></a></li>
-                                        <li><a class="forrst" href="#"></a></li>-->
                                         <li><a href="https://join.skype.com/invite/W9J0blTZXkbo" target="_blank"><i class="fab fa-skype"></i></a></li>
                                         <li><a href="https://open.spotify.com/user/wic6php7wbalh3yzssfj9cjsg" target="_blank"><i class="fab fa-spotify"></i></a></li>
                                         <li><a href="https://www.youtube.com/channel/UCR3KXC8Gke6jpfBxF3fxCnA" target="_blank"><i class="fab fa-youtube"></i></a></li>
-                                        <!--<li><a class="flickr" href="#"></a></li>
-                                        <li><a class="tumblr" href="#"></a></li>
-                                        <li><a class="blogger" href="#"></a></li>
-                                        <li><a class="delicious" href="#"></a></li>
-                                        <li><a class="digg" href="#"></a></li>
-                                        <li><a class="friendfeed" href="#"></a></li>
-                                        <li><a class="wordpress" href="#"></a></li>-->
                                     </ul>
                                     <!-- SOCIAL -->
 
@@ -850,7 +835,17 @@
     <link rel="stylesheet" type="text/css" href="skin-select/skin-select.css">
     <script src="skin-select/jquery.cookie.js"></script>
     <script src="skin-select/skin-select.js"></script>
+    <script>
+        $.ajax({
+            url: "json/info.json",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            }
+        });
 
+    </script>
 
 </body>
 
