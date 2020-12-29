@@ -848,6 +848,17 @@
             }
         });
 
+        // Check to see if Media-Queries are supported
+        if (window.matchMedia) {
+            // Check if the dark-mode Media-Query matches
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                console.log("dark")
+            } else {
+                console.log("light")
+            }
+        } else {
+            console.log("not supported")
+        }
     </script>
 
 </body>
